@@ -1,6 +1,28 @@
 'use strict';
 
 module.exports = {
+  /* ... */
+  // IMPORTANT: set the test sequencer
+  testSequencer: require.resolve('@split-tests/jest'),
+
+  // report the run times of the tests, use `jest-unit` reporter
+  reporters: [
+    'default',
+    [
+      'jest-junit',
+      {
+        outputDirectory: 'unit',
+        addFileAttribute: true,
+      },
+    ],
+  ],
+
+  globals: {
+    'split-tests': {
+      // collect the times
+      junit: '<rootDir>/unit/junit.xml',
+    },
+  },
   globalSetup: require.resolve('./setupGlobal.js'),
   haste: {
     hasteImplModulePath: require.resolve('./noHaste.js'),
@@ -23,7 +45,7 @@ module.exports = {
   timers: 'fake',
   snapshotSerializers: [require.resolve('jest-snapshot-serializer-raw')],
 
-  testSequencer: require.resolve('./jestSequencer'),
+  //testSequencer: require.resolve('./jestSequencer'),
 
   testEnvironment: 'jsdom',
 };

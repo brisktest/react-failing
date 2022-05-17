@@ -36,6 +36,7 @@
     "@babel/preset-flow": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "@babel/traverse": "^7.11.0",
+    "@split-tests/jest": "^0.1.0",
     "abort-controller": "^3.0.0",
     "art": "0.10.1",
     "babel-eslint": "^10.0.3",
@@ -149,5 +150,8 @@
   },
   "resolutions": {
     "react-is": "npm:react-is"
+  },
+  "dependencies": {
+    "jest-junit": "^13.0.0"
   }
 }
