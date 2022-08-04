@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="24" failures="0" errors="0" time="3.198">
+  <testsuite name="no-production-logging" errors="0" failures="0" skipped="0" timestamp="2022-06-22T21:08:50" time="2.098" tests="24">
+    <testcase classname="no-production-logging valid 
+        if (__DEV__) {
+          console.error(&apos;Oh no&apos;);
+        }
+      " name="no-production-logging valid 
+        if (__DEV__) {
+          console.error(&apos;Oh no&apos;);
+        }
+      " time="0.044">
+    </testcase>
+    <testcase classname="no-production-logging valid 
+        if (__DEV__) {
+          console.error(&apos;Hello %s&apos;, foo)
+        }
+      " name="no-production-logging valid 
+        if (__DEV__) {
+          console.error(&apos;Hello %s&apos;, foo)
+        }
+      " time="0.003">
+    </testcase>
+    <testcase classname="no-production-logging valid 
+        if (__DEV__) {
+          console.error(&apos;Hello %s %s&apos;, foo, bar)
+        }
+      " name="no-production-logging valid 
+        if (__DEV__) {
+          console.error(&apos;Hello %s %s&apos;, foo, bar)
+        }
+      " time="0.002">
+    </testcase>
+    <testcase classname="no-production-logging valid 
+        if (__DEV__) {
+          console.warn(&apos;Oh no&apos;);
+        }
+      " name="no-production-logging valid 
+        if (__DEV__) {
+          console.warn(&apos;Oh no&apos;);
+        }
+      " time="0.002">
+    </testcase>
+    <testcase classname="no-production-logging valid 
+        if (__DEV__) {
+          console.warn(&apos;Oh no&apos;);
+        }
+      " name="no-production-logging valid 
+        if (__DEV__) {
+          console.warn(&apos;Oh no&apos;);
+        }
+      " time="0.002">
+    </testcase>
+    <testcase classname="no-production-logging valid 
+        if (__DEV__) {
+          if (potato) {
+            while (true) {
+              console.error(&apos;Oh no&apos;);
+            }
+          }
+        }" name="no-production-logging valid 
+        if (__DEV__) {
+          if (potato) {
+            while (true) {
+              console.error(&apos;Oh no&apos;);
+            }
+          }
+        }" time="0.003">
+    </testcase>
+    <testcase classname="no-production-logging valid 
+        var f;
+        if (__DEV__) {
+          f = function() {
+            if (potato) {
+              while (true) {
+                console.error(&apos;Oh no&apos;);
+              }
+            }
+          };
+        }" name="no-production-logging valid 
+        var f;
+        if (__DEV__) {
+          f = function() {
+            if (potato) {
+              while (true) {
+                console.error(&apos;Oh no&apos;);
+              }
+            }
+          };
+        }" time="0.01">
+    </testcase>
+    <testcase classname="no-production-logging valid normalFunctionCall(test);" name="no-production-logging valid normalFunctionCall(test);" time="0.004">
+    </testcase>
+    <testcase classname="no-production-logging valid invariant(test);" name="no-production-logging valid invariant(test);" time="0.003">
+    </testcase>
+    <testcase classname="no-production-logging valid 
+        if (__DEV__) {
+          normalFunctionCall(test);
+        }
+      " name="no-production-logging valid 
+        if (__DEV__) {
+          normalFunctionCall(test);
+        }
+      " time="0.009">
+    </testcase>
+    <testcase classname="no-production-logging valid 
+        if (__DEV__) {
+          if (foo) {
+            if (__DEV__) {
+            } else {
+              console.error(&apos;Oh no&apos;);
+            }
+          }
+        }" name="no-production-logging valid 
+        if (__DEV__) {
+          if (foo) {
+            if (__DEV__) {
+            } else {
+              console.error(&apos;Oh no&apos;);
+            }
+          }
+        }" time="0.002">
+    </testcase>
+    <testcase classname="no-production-logging valid 
+        console[&apos;error&apos;](&apos;Oh no&apos;);
+      " name="no-production-logging valid 
+        console[&apos;error&apos;](&apos;Oh no&apos;);
+      " time="0.001">
+    </testcase>
+    <testcase classname="no-production-logging invalid console.error(&apos;Oh no&apos;);" name="no-production-logging invalid console.error(&apos;Oh no&apos;);" time="0.005">
+    </testcase>
+    <testcase classname="no-production-logging invalid console.warn(&apos;Oh no&apos;);" name="no-production-logging invalid console.warn(&apos;Oh no&apos;);" time="0.002">
+    </testcase>
+    <testcase classname="no-production-logging invalid console.warn(&apos;Oh no&apos;)" name="no-production-logging invalid console.warn(&apos;Oh no&apos;)" time="0.002">
+    </testcase>
+    <testcase classname="no-production-logging invalid 
+        if (potato) {
+          console.warn(&apos;Oh no&apos;);
+        }
+      " name="no-production-logging invalid 
+        if (potato) {
+          console.warn(&apos;Oh no&apos;);
+        }
+      " time="0.003">
+    </testcase>
+    <testcase classname="no-production-logging invalid 
+        if (__DEV__ || potato &amp;&amp; true) {
+          console.error(&apos;Oh no&apos;);
+        }
+      " name="no-production-logging invalid 
+        if (__DEV__ || potato &amp;&amp; true) {
+          console.error(&apos;Oh no&apos;);
+        }
+      " time="0.003">
+    </testcase>
+    <testcase classname="no-production-logging invalid 
+        if (banana &amp;&amp; __DEV__ &amp;&amp; potato &amp;&amp; kitten) {
+          console.error(&apos;Oh no&apos;);
+        }
+      " name="no-production-logging invalid 
+        if (banana &amp;&amp; __DEV__ &amp;&amp; potato &amp;&amp; kitten) {
+          console.error(&apos;Oh no&apos;);
+        }
+      " time="0.003">
+    </testcase>
+    <testcase classname="no-production-logging invalid 
+        if (!__DEV__) {
+          console.error(&apos;Oh no&apos;);
+        }
+      " name="no-production-logging invalid 
+        if (!__DEV__) {
+          console.error(&apos;Oh no&apos;);
+        }
+      " time="0.003">
+    </testcase>
+    <testcase classname="no-production-logging invalid 
+        if (foo || x &amp;&amp; __DEV__) {
+          console.error(&apos;Oh no&apos;);
+        }
+      " name="no-production-logging invalid 
+        if (foo || x &amp;&amp; __DEV__) {
+          console.error(&apos;Oh no&apos;);
+        }
+      " time="0.003">
+    </testcase>
+    <testcase classname="no-production-logging invalid 
+        if (__DEV__) {
+        } else {
+          console.error(&apos;Oh no&apos;);
+        }
+      " name="no-production-logging invalid 
+        if (__DEV__) {
+        } else {
+          console.error(&apos;Oh no&apos;);
+        }
+      " time="0.002">
+    </testcase>
+    <testcase classname="no-production-logging invalid 
+        if (__DEV__) {
+        } else {
+          if (__DEV__) {
+          } else {
+            console.error(&apos;Oh no&apos;);
+          }
+        }
+      " name="no-production-logging invalid 
+        if (__DEV__) {
+        } else {
+          if (__DEV__) {
+          } else {
+            console.error(&apos;Oh no&apos;);
+          }
+        }
+      " time="0.002">
+    </testcase>
+    <testcase classname="no-production-logging invalid 
+        if (__DEV__) {
+          console.log(&apos;Oh no&apos;);
+        }
+      " name="no-production-logging invalid 
+        if (__DEV__) {
+          console.log(&apos;Oh no&apos;);
+        }
+      " time="0.001">
+    </testcase>
+    <testcase classname="no-production-logging invalid 
+        if (__DEV__) {
+          console.log.apply(console, &apos;Oh no&apos;);
+        }
+      " name="no-production-logging invalid 
+        if (__DEV__) {
+          console.log.apply(console, &apos;Oh no&apos;);
+        }
+      " time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>
