@@ -1,0 +1,59 @@
+{
+  "commands": [
+    {
+      "commandline": "FORCE_COLOR=true yarn test  --json ",
+      "args": null,
+      "workDirectory": "",
+      "background": false
+    }
+  ],
+  "setupCommands" :[],
+  "buildCommands": [
+
+    {
+      "commandline": "nvm install 14.18.0",
+      "args": null,
+      "workDirectory": "",
+      "background": false
+    },
+    {
+      "commandline": "nvm use 14.18.0",
+      "args": null,
+      "workDirectory": "",
+      "background": false
+    },
+    {
+      "commandline": "yarn",
+      "args": null,
+      "workDirectory": "",
+      "background": false
+    }
+  ],
+  "concurrency": 80,
+  "excludedFromSync": [
+    "log/",
+    ".git/",
+    "node_modules",
+    ".rvm"
+  ],
+  "excludedFromWatch": [
+    "log/",
+    ".git/",
+    "log",
+    ".git",
+    "node_modules"
+  ],
+  "projectToken": "85nXR0435e",
+  "apiEndpoint": "",
+  "reconnectDelay": 0,
+  "framework": "Jest",
+  "listTestCommand": "yarn -s test --listTests |  grep `pwd` | xargs wc -w  | sort -rn | grep '/' |  awk -F ' ' '{print $2}' |jq -R -s -c 'split(\"\n\")[:-1]'",
+  "preListTestCommand": "",
+  "environment": {
+    "MY_ENV": "empty"
+  },
+  "image": "node-lts",
+  "splitByJUnit": true,
+  "orderedFiles": null,
+  "rebuildFilePaths": ["package.json"]
+}
