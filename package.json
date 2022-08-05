@@ -152,6 +152,6 @@
     "react-is": "npm:react-is"
   },
   "dependencies": {
-    "jest-junit": "^13.0.0"
+    "jest-junit": "^14.0.0"
   }
 }
