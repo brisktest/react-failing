@@ -19,5 +19,4 @@ jobs:
           BRISK_APITOKEN: '${{ secrets.BRISK_APITOKEN }}'
           BRISK_APIKEY: '${{ secrets.BRISK_APIKEY }}'
           BRISK_PROJECT_CONFIG_FILE: 'brisk-ci.json'
-          BRISK_LOG_TO_CONSOLE: true
 
