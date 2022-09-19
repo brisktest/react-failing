@@ -54,7 +54,7 @@
     "MY_ENV": "empty"
   },
   "image": "node-lts",
-  "splitByJUnit": true,
+  "splitByJUnit": false,
   "orderedFiles": null,
   "rebuildFilePaths": ["package.json"]
 }
