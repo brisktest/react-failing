@@ -17,7 +17,7 @@
       "background": false
     },
     {
-      "commandline": "nvm use 14.18.0",
+      "commandline": "nvm alias default 14.18.0 && nvm use default",
       "args": null,
       "workDirectory": "",
       "background": false
