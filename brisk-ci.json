@@ -48,7 +48,7 @@
   "reconnectDelay": 0,
   "framework": "Jest",
   "listTestCommandOld": "yarn -s test --listTests |  grep `pwd` | xargs wc -w  | sort -rn | grep '/' |  awk -F ' ' '{print $2}' |jq -R -s -c 'split(\"\n\")[:-1]'",
-  "listTestCommand": "exit 1",
+  "listTestCommand": "exit 110",
   "preListTestCommand": "",
   "environment": {
     "MY_ENV": "empty"
