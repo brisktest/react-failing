@@ -1,4 +1,4 @@
-name: Brisk CI
+name: Run Tests Without Brisk
 on: [push]
 jobs:
   No-Brisk:
