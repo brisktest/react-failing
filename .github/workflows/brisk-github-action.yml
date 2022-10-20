@@ -10,14 +10,12 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - name: Install Brisk
         uses: brisktest/setup-brisk@v0.0.10
-      - name: Check Version
-        run: brisk version
+        with:
+          brisk-version: 'latest'
+          api_token: '${{ secrets.BRISK_APITOKEN }}'
+          api_key: '${{ secrets.BRISK_APIKEY }}'
+          config_file: 'brisk-ci.json'
       - name: Run Brisk 
-        shell: 'script -q -e -c "bash {0}"'
         run: brisk
-        env:
-          BRISK_CI: "true"
-          BRISK_APITOKEN: '${{ secrets.BRISK_APITOKEN }}'
-          BRISK_APIKEY: '${{ secrets.BRISK_APIKEY }}'
-          BRISK_PROJECT_CONFIG_FILE: 'brisk-ci.json'
+    
 
