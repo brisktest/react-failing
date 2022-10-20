@@ -1,26 +1,22 @@
-name: Brisk CI
+name: Brisk CI With Public Action
 on: [push]
 jobs:
-  Brisk-CI:
+  Brisk-CI-Public-Action:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: wget https://update.brisktest.com/brisk/latest/linux-amd64/brisk -O /tmp/brisk --no-cache
-      - run: chmod 700 /tmp/brisk
-      - run: /tmp/brisk version
+      - name: Install Brisk
+        uses: brisktest/setup-brisk@v1
+      - run: brisk version
       - name: Run Brisk 
         shell: 'script -q -e -c "bash {0}"'
-        run: /tmp/brisk
+        run: brisk
         env:
-          BRISK_CI: "true "
+          BRISK_CI: "true"
           BRISK_APITOKEN: '${{ secrets.BRISK_APITOKEN }}'
           BRISK_APIKEY: '${{ secrets.BRISK_APIKEY }}'
           BRISK_PROJECT_CONFIG_FILE: 'brisk-ci.json'
 
-steps:
-- uses: brisktest/setup-brisk@v1
-  with:
-    brisk_version: 0.1.25
