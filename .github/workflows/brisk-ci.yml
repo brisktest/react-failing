@@ -6,7 +6,7 @@ jobs:
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@0.0.1
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: wget https://update.brisktest.com/brisk/latest/linux-amd64/brisk -O /tmp/brisk --no-cache
       - run: chmod 700 /tmp/brisk
@@ -20,7 +20,3 @@ jobs:
           BRISK_APIKEY: '${{ secrets.BRISK_APIKEY }}'
           BRISK_PROJECT_CONFIG_FILE: 'brisk-ci.json'
 
-steps:
-- uses: brisktest/setup-brisk@v1
-  with:
-    brisk_version: 0.1.25
