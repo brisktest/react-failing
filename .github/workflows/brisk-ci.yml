@@ -16,5 +16,5 @@ jobs:
           api_key: '${{ secrets.BRISK_APIKEY }}'
           config_file: 'brisk-ci.json'
       - name: Run Brisk
-        run: BRISK_NO_TERM=true BRISK_LOG_LEVEL=debug brisk
+        run: BRISK_NO_TERM=true BRISK_LOG_LEVEL=debug NO_LOCAL_LOG_FILE=true brisk
         
