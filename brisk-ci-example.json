@@ -1,0 +1,26 @@
+{
+  "commands": [
+    {
+      "commandline": "FORCE_COLOR=true yarn test  --json "
+    }
+  ],
+  "buildCommands": [
+    {
+      "commandline": "nvm alias default 16.7 && nvm use default"
+    },
+    {
+      "commandline": "yarn"
+    }
+  ],
+  "concurrency": 60,
+  "excludedFromSync": ["log/", ".git/", "node_modules", ".rvm"],
+  "excludedFromWatch": ["log/", ".git/", "node_modules"],
+  "projectToken":  "85nXR0435e",
+  "framework": "Jest",
+  "listTestCommand": "yarn -s test --listTests --json",
+  "environment": {
+    "MY_ENV": "empty"
+  },
+  "image": "node-lts",
+  "rebuildFilePaths": ["package.json"]
+}
