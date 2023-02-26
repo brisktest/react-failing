@@ -1,9 +1,9 @@
-name: Brisk CI
+name: Brisk Uptime Monitor
 on:
   schedule:
   - cron: "*/2 * * * *"
 jobs:
-  Brisk-CI:
+  Brisk-Uptime:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
