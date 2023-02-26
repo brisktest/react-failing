@@ -1,0 +1,28 @@
+name: Brisk CI
+on:
+  schedule:
+  - cron: "*/2 * * * *"
+jobs:
+  Brisk-CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install Brisk
+        uses: brisktest/setup-brisk@v1.1
+        with:
+          brisk_version: 'latest'
+          api_token: '${{ secrets.BRISK_APITOKEN }}'
+          api_key: '${{ secrets.BRISK_APIKEY }}'
+          config_file: 'brisk-ci.json'
+      - name: Run Brisk
+        run: brisk
+      - name: Report Status
+        if: always()
+        uses: ravsamhq/notify-slack-action@v1
+        with:
+          status: ${{ job.status }}
+          notify_when: 'failure'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
+              

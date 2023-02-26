@@ -1,7 +1,7 @@
 {
   "commands": [
     {
-      "commandline": "FORCE_COLOR=true yarn test  --json ",
+      "commandline": "FORCE_COLOR=true yarn test --json ",
       "args": null,
       "workDirectory": "",
       "background": false
@@ -47,7 +47,7 @@
   "apiEndpoint": "",
   "reconnectDelay": 0,
   "framework": "Jest",
-  "listTestCommand": "yarn -s test --listTests |  grep `pwd` | xargs wc -w  | sort -rn | grep '/' |  awk -F ' ' '{print $2}' |jq -R -s -c 'split(\"\n\")[:-1]'",
+  "listTestCommand": "yarn -s test --silent --listTests --json",
   "preListTestCommand": "",
   "environment": {
     "MY_ENV": "empty"
