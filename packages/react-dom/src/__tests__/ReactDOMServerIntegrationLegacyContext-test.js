@@ -75,7 +75,7 @@ describe('ReactDOMServerIntegration', () => {
           <ClassChildWithContext />
         </PurpleContext>,
       );
-      expect(e.textContent).toBe('purple');
+      expect(e.textContent).toBe('purpley?');
     });
 
     itRenders('stateless child with context', async render => {
