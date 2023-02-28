@@ -15,7 +15,16 @@ jobs:
           api_token: '${{ secrets.BRISK_APITOKEN }}'
           api_key: '${{ secrets.BRISK_APIKEY }}'
           config_file: 'brisk-ci.json'
+      - name: Version
+        run: brisk version          
       - name: Run Brisk
-        run: brisk
-
+        run: brisk 
+      - name: Report Status
+        if: always()
+        uses: ravsamhq/notify-slack-action@v1
+        with:
+          status: ${{ job.status }}
+          notify_when: "failure,cancelled,warnings,skipped"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
               
