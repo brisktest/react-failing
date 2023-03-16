@@ -47,7 +47,7 @@
   "apiEndpoint": "",
   "reconnectDelay": 0,
   "framework": "Jest",
-  "listTestCommand": "yarn -s test --silent --listTests --json Context",
+  "listTestCommand": "yarn -s test --silent --listTests --json ",
   "preListTestCommand": "",
   "environment": {
     "MY_ENV": "empty"
