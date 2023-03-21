@@ -29,7 +29,7 @@
       "background": false
     }
   ],
-  "concurrency": 60,
+  "concurrency": 20,
   "excludedFromSync": [
     "log/",
     ".git/",
