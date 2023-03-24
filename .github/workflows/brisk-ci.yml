@@ -3,6 +3,8 @@ on: [push]
 jobs:
   Brisk-CI:
     runs-on: ubuntu-latest
+    timeout-minutes: 9
+
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
