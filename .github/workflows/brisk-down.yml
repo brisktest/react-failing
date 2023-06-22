@@ -1,7 +1,7 @@
 name: Brisk Uptime (down) Monitoring
 on:
   schedule:
-  - cron: "*/6 * * * *"
+  - cron: "5 */6 * * *"
 jobs:
   Brisk-CI-up:
     runs-on: ubuntu-latest
@@ -17,9 +17,9 @@ jobs:
           api_key: '${{ secrets.BRISK_APIKEY }}'
           config_file: 'brisk-ci.json'
       - name: Version
-        run: brisk version          
+        run: brisk version
       - name: Run Brisk
-        run: brisk 
+        run: brisk
       - name: Report Status
         if: always()
         uses: ravsamhq/notify-slack-action@v1
@@ -28,4 +28,3 @@ jobs:
           notify_when: "success,cancelled,warnings,skipped"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
-              
